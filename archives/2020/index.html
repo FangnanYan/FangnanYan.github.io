@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+        <title>Archive: 2020 | Fangnan Yan&#39;s Blog</title>
+        
+        
+        <link rel="icon" href="//favicon.png">
+        
+        
+<link rel="stylesheet" href="/css/normalize.css">
+
+        
+<link rel="stylesheet" href="/css/style.css">
+
+        
+<link rel="stylesheet" href="/css/common.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+    <meta name="generator" content="Hexo 4.2.1"></head>
+    <body onscroll="scrollYListener()">
+        <div class="wrapper">
+            <div class="mobile_menu_btn">
+  <button id="mobile_menu_btn" class="c-hamburger c-hamburger--htx">
+  <span>toggle menu</span>
+  </button>
+</div>
+<div class="slide_menu">
+  <nav class="nav_scroll">
+    <ul class="clearfix">
+      
+      
+      <li class=""> <a href="/">Home</a> </li>
+      
+      
+      <li class="active"> <a href="/archives">Archive</a> </li>
+      
+    </ul>
+  </nav>
+  <div class="social">
+    <ul class="clearfix">
+      
+      
+      <li> <a href="xxx" target="_blank"> <img src="/img/GitHub.png"> </a> </li>
+      
+      
+    </ul>
+  </div>
+  <div class="copyright">
+    &copy; 2020 Fangnan Yan&#39;s Blog | Provided By  <a title="Fangnan Yan" href="http://chengkang.me/" target="_blank">Fangnan Yan</a>
+  </div>
+</div>
+<header>
+  <div class="mobile_navbar clearfix">
+    
+    <div class="logo">
+      <a href="/">Fangnan Yan&#39;s Blog</a>
+    </div>
+    
+  </div>
+  <div class="row clearfix no_form">
+    <div class="logo">
+      <a href="/">Fangnan Yan&#39;s Blog</a>
+    </div>
+    <nav class="nav_scroll">
+      <ul class="clearfix">
+      
+      
+      <li class=""> <a href="/">Home</a> </li>
+      
+      
+      <li class="active"> <a href="/archives">Archive</a> </li>
+      
+      </ul>
+    </nav>
+  </div>
+</header>
+            <div class="section" id="Search">
+	<div class="section_content">
+		<h3>
+		Search
+		<br>
+		Find out if your question is answered here
+		</h3>
+		<div id="search-content" class="search-content-modal unexpanded">
+			<div id="search-view">
+				<div class="search-info box">
+					<input type="text" id="search-input" placeholder="Enter Keyword" onkeyup="searchInputOnKeyUp()">
+					<div class="magnifying-glass" id="search-button" onclick="searchInSite(event)">
+						<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 500 500">
+						<path fill="none" stroke="#fff" stroke-width="36" stroke-linecap="round" d="m280,278a153,153 0 1,0-2,2l170,170m-91-117 110,110-26,26-110-110"></path>
+					</svg>
+				</div>
+			</div>
+			<div class="modal" id="search-result" style="display:none">
+				<h2 id="search-result-title">Found 0 match(es):</h2>
+				<ul id="search-result-list">
+				</ul>
+				<span>
+					<button onclick="dismissSearchResultModal()">×</button>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="/js/lunr.min.js"></script>
+
+<script>
+var content = lunr(function () {
+this.field('title');
+this.field('content');
+this.ref('id');
+})
+	var postsAllText = (function () {/*::qa::lurn::qa::Project Summary::qa::lurn::qa::http://yoursite.com/2020/07/21/Project-Summary/::qa::lurn::qa::&lt;p&gt;NBAstat是一款体育赛事新闻类的APP，在这个APP中，有三大模块可以供用户选取：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;球队赛程&lt;/li&gt;
+&lt;li&gt;球队对战&lt;/li&gt;
+&lt;li&gt;赛事新闻&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在球队赛程模块中，用户可以搜索自己喜欢的球队在当前赛季的常规赛赛程，包括时间和对手球队；在球队对对战模块中，用户可以输入主队和客队的名称进行搜索，从而查找到自己期待已久的比赛；赛事新闻模块则每日更新，提供NBA赛事热点新闻(以及球星或球队的周边消息)。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2020/07/21/Project-Summary/1.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&#34;/2020/07/21/Project-Summary/2.png&#34; alt=&#34;2&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&#34;/2020/07/21/Project-Summary/3.png&#34; alt=&#34;3&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;&lt;img src=&#34;/2020/07/21/Project-Summary/4.png&#34; alt=&#34;4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;NBAstat.apk&#34;&gt;点击下载APP&lt;/a&gt;&lt;/p&gt;
+::qa::lurn::qa::*/}).toString();
+	var arr = postsAllText.split("::qa::lurn::qa::");
+	for(var i = 1; i+2 <= arr.length - 3; i+=3) {
+	content.add({
+	id: Math.floor(i/3),
+	title: arr[i],
+	content: arr[i+2]
+	});
+	}
+	function searchInSite() {
+		var keyword = document.getElementById("search-input").value;
+		var result = content.search(keyword);
+		if (result.length == 0) {
+			document.getElementById("search-result-title").innerHTML = "Found 0 match.";
+		} else {
+			document.getElementById("search-result-title").innerHTML = "Found "+result.length+" match(es):";
+		}
+		document.getElementById("search_result_list").innerHTML = "";
+		for(var i = 0; i < result.length; i++) {
+			document.getElementById("search-result-list").innerHTML += '<li><a href="'+arr[result[i].ref*3+2]+'">'+arr[result[i].ref*3+1]+'</a></li>';
+		}
+		document.getElementById("search-result").style.display = "block";
+	}
+	function searchInputOnKeyUp() {
+		event.preventDefault();
+	if (event.keyCode == 13) {
+	searchInSite();
+	}
+	}
+</script>
+
+<script>
+function dismissSearchResultModal() {
+	document.getElementById("search-result").style.display = "none";
+}
+</script>
+</div>
+<div class="section" id="Archive">
+    <h2 class="center">Archive</h2>
+    <div class="post-list">
+        
+        
+        
+        
+        
+        
+        
+        <h4>2020</h4>
+        
+        <p class="post-title"><span>Jul 21, 2020</span><a href="/2020/07/21/Project-Summary/">Project Summary</a></p>
+        
+    </div>
+</div>
+
+	
+	
+	
+
+            <footer>
+	<div class="footer_wrap">
+		<div class="social">
+			<ul class="clearfix">
+				
+				
+				<li> <a href="xxx" target="_blank"> <img src="/img/GitHub.png"> </a> </li>
+				
+				
+			</ul>
+		</div>
+		<img src="/img/line.jpg">
+		<div class="copyright">
+			&copy; 2020 Fangnan Yan&#39;s Blog | Provided By  <a title="Fangnan Yan" href="http://chengkang.me/" target="_blank">Fangnan Yan</a>
+		</div>
+	</div>
+</footer>
+        </div>
+        <script type="text/javascript">
+        function scrollYListener() {
+        var searchHeight = parseInt(getComputedStyle(document.getElementById("Search")).height)
+        var width = document.documentElement.clientWidth;
+        var supportPageOffset = window.pageXOffset !== undefined;
+        var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+        var scrollY = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+        if (scrollY >= searchHeight-10) {
+        document.getElementsByTagName('header')[0].style.backgroundColor = "#cd4b4b";
+        document.getElementsByClassName('logo')[0].style.backgroundColor = "#cd4b4b";
+        } else {
+        document.getElementsByTagName('header')[0].style.backgroundColor = "#4f8e8e";
+        document.getElementsByClassName('logo')[0].style.backgroundColor = "#4f8e8e";
+        }
+        }
+        var isMenuExpanded = false;
+        document.getElementById("mobile_menu_btn").onclick = function toggleMobileMenu() {
+        if (isMenuExpanded) {
+        document.getElementsByClassName('slide_menu')[0].className = "slide_menu";
+        } else {
+        document.getElementsByClassName('slide_menu')[0].className += " mobile_menu_active";
+        }
+        isMenuExpanded = !isMenuExpanded;
+        }
+        </script>
+        
+        
+    </body>
+</html>
